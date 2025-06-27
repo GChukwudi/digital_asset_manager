@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import AssetRegistryABI from '../abi/AssetRegistry.json';
 
 // Replace with your deployed contract address
-const CONTRACT_ADDRESS = '0x5B806d6ed1922C27654f4ad68cE336A844dde8f8'; // Add your contract address here
+const CONTRACT_ADDRESS = '0x5B806d6ed1922C27654f4ad68cE336A844dde8f8';
 
 let provider;
 let signer;
@@ -46,7 +46,7 @@ export const getContract = async () => {
   }
   
   if (!contract) {
-    contract = new ethers.Contract(CONTRACT_ADDRESS, AssetRegistryABI, signer);
+    contract = new ethers.Contract(CONTRACT_ADDRESS, AssetRegistryABI.abi, signer);
   }
   
   return contract;

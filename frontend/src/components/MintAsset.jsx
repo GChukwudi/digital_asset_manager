@@ -188,7 +188,7 @@ const MintAsset = ({ contract, account, onAssetMinted }) => {
               className="generate-btn"
               onClick={generateSampleHash}
             >
-              Generate Sample
+              Generate Hash
             </button>
           </div>
           {errors.contentHash && <span className="error-message">{errors.contentHash}</span>}
