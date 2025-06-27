@@ -1,0 +1,18 @@
+.asset-details {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.asset-details input {
+  padding: 8px;
+  border: 1px solid #aaa;
+}
+
+.asset-details button {
+  padding: 10px;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+}

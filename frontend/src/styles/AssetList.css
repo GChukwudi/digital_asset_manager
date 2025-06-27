@@ -1,0 +1,14 @@
+.asset-list {
+  margin-top: 20px;
+}
+
+.asset-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.asset-list li {
+  margin: 8px 0;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 0;
+}

@@ -1,0 +1,18 @@
+.mint-asset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.mint-asset input {
+  padding: 8px;
+  border: 1px solid #aaa;
+}
+
+.mint-asset button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
