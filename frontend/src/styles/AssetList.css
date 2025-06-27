@@ -1,14 +1,260 @@
 .asset-list {
-  margin-top: 20px;
+  padding: 30px;
 }
 
-.asset-list ul {
-  list-style: none;
-  padding: 0;
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #718096;
 }
 
-.asset-list li {
-  margin: 8px 0;
-  border-bottom: 1px solid #ccc;
-  padding: 5px 0;
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: #718096;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.list-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.list-header h2 {
+  font-size: 2rem;
+  color: #1a202c;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.list-header p {
+  color: #718096;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.assets-count {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.assets-count span {
+  font-weight: 700;
+}
+
+.assets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.asset-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.asset-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
+}
+
+.asset-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.asset-id {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-weight: 700;
+  color: #667eea;
+  font-size: 0.9rem;
+}
+
+.asset-status {
+  background: #48bb78;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.asset-card-body {
+  padding: 20px;
+}
+
+.asset-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.asset-metadata {
+  color: #718096;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  min-height: 45px;
+}
+
+.asset-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.detail-label {
+  color: #4a5568;
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.detail-value {
+  color: #2d3748;
+  font-weight: 400;
+  text-align: right;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.storage-id,
+.content-hash {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.8rem;
+}
+
+.asset-card-footer {
+  padding: 15px 20px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.view-details-btn {
+  width: 100%;
+  background: transparent;
+  color: #667eea;
+  border: 1px solid #667eea;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.view-details-btn:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.asset-card:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .asset-list {
+    padding: 20px;
+  }
+  
+  .assets-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .list-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .asset-card-header {
+    padding: 12px 15px;
+  }
+  
+  .asset-card-body {
+    padding: 15px;
+  }
+  
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .detail-value {
+    text-align: left;
+    max-width: 100%;
+  }
 }

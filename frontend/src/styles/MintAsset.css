@@ -1,18 +1,176 @@
 .mint-asset {
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mint-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.mint-header h2 {
+  font-size: 2rem;
+  color: #1a202c;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.mint-header p {
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.mint-form {
   display: flex;
   flex-direction: column;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #e53e3e;
+  background: #fed7d7;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.hash-input-group {
+  display: flex;
   gap: 10px;
-  padding: 20px;
 }
 
-.mint-asset input {
-  padding: 8px;
-  border: 1px solid #aaa;
+.hash-input-group input {
+  flex: 1;
 }
 
-.mint-asset button {
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
+.generate-btn {
+  background: #48bb78;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.generate-btn:hover {
+  background: #38a169;
+  transform: translateY(-1px);
+}
+
+.form-hint {
+  color: #718096;
+  font-size: 0.875rem;
+  margin-top: 4px;
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.mint-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 160px;
+  justify-content: center;
+}
+
+.mint-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.mint-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .mint-asset {
+    padding: 20px;
+  }
+  
+  .mint-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .hash-input-group {
+    flex-direction: column;
+  }
+  
+  .generate-btn {
+    align-self: flex-end;
+    width: auto;
+  }
 }

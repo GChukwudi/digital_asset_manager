@@ -1,18 +1,271 @@
 .asset-details {
-  margin-top: 20px;
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.no-asset {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: #718096;
+}
+
+.no-asset-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.no-asset h3 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.no-asset p {
+  font-size: 1rem;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.asset-title-section h2 {
+  font-size: 2.2rem;
+  color: #1a202c;
+  margin-bottom: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.asset-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.edit-title .title-input {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a202c;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  background: white;
+}
+
+.action-buttons {
+  display: flex;
   gap: 10px;
 }
 
-.asset-details input {
-  padding: 8px;
-  border: 1px solid #aaa;
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
 }
 
-.asset-details button {
-  padding: 10px;
-  background-color: #444;
+.edit-btn {
+  background: #667eea;
   color: white;
+}
+
+.save-btn {
+  background: #48bb78;
+  color: white;
+}
+
+.cancel-btn {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.edit-btn:hover,
+.save-btn:hover,
+.cancel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.details-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.info-section,
+.actions-section {
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.info-section h3,
+.actions-section h3 {
+  font-size: 1.4rem;
+  color: #1a202c;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-item label {
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  color: #2d3748;
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.info-value.copyable {
   cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-value.copyable:hover {
+  background: #edf2f7;
+  border-color: #667eea;
+}
+
+.copy-icon {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.info-value.copyable:hover .copy-icon {
+  opacity: 1;
+}
+
+.metadata-input {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #667eea;
+  font-size: 0.95rem;
+  color: #2d3748;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.actions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.action-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.action-card h4 {
+  font-size: 1.1rem;
+  color: #1a202c;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.action-card p {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.verify-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.verify-input,
+.transfer-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.verify-btn,
+.transfer-btn,
+.show-transfer-btn,
+.report-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.verify-btn:hover,
+.transfer-btn:hover,
+.show-transfer-btn:hover,
+.report-btn:hover {
+  background: #5a67d8;
+  transform: translateY(-1px);
+}
+
+.verification-result {
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
