@@ -61,8 +61,8 @@ function App() {
           storageId: assetInfo.storageId,
           contentHash: assetInfo.contentHash,
           holder: assetInfo.holder,
-          mintedAt: new Date(assetInfo.mintedAt * 1000),
-          updatedAt: new Date(assetInfo.updatedAt * 1000)
+          mintedAt: new Date(Number(assetInfo.mintedAt) * 1000),
+          updatedAt: new Date(Number(assetInfo.updatedAt) * 1000)
         };
       });
       
