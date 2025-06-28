@@ -2,7 +2,7 @@
 
 A decentralized platform to register, manage, and verify ownership of digital assets using the Ethereum blockchain. Built with React, Vite, and Solidity.
 
-**🌐 Live App**: [https://your-render-link.com](https://assetregistry.onrender.com)
+**🌐 Live App**: [Asset Registry](https://assetregistry.onrender.com)
 
 ---
 
